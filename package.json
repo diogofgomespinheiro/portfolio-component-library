@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-component-library",
+  "version": "1.0.0",
+  "description": "Simple Component Library for my portfolio",
+  "main": "index.ts",
+  "repository": "https://github.com/diogofgomespinheiro/portfolio-component-library",
+  "author": "Diogo Pinheiro",
+  "license": "MIT"
+}
