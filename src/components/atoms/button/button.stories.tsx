@@ -19,6 +19,9 @@ Default.args = { elementType: 'button' };
 export const Link = (args: ButtonProps) => <Button {...args}>Resume</Button>;
 Link.args = { elementType: 'a' };
 
+export const Dark = (args: ButtonProps) => <Button {...args}>Resume</Button>;
+Dark.args = { appearance: 'darkOrange' };
+
 export const Disabled = (args: ButtonProps) => (
   <Button {...args} onClick={action('button action click')}>
     Resume
@@ -37,6 +40,9 @@ export const All = () => (
     </Button>
     <Button elementType="a" href="#" style={{ marginRight: '10px' }}>
       Link
+    </Button>
+    <Button appearance="darkOrange" style={{ marginRight: '10px' }}>
+      Dark
     </Button>
     <Button disabled>Disabled</Button>
   </>
