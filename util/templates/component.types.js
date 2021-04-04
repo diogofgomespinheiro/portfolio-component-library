@@ -1,4 +1,4 @@
-module.exports = componentName => ({
+module.exports = ({ componentName }) => ({
   content: `
 export type ${componentName}Props = {
     foo: string;

@@ -1,4 +1,4 @@
-module.exports = componentName => ({
+module.exports = ({ componentName }) => ({
   content: `
 import styled from 'styled-components';
 `,

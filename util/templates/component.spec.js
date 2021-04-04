@@ -1,4 +1,4 @@
-module.exports = componentName => ({
+module.exports = ({ componentName }) => ({
   content: `
 import React from "react";
 import { render } from "@testing-library/react";
@@ -18,12 +18,12 @@ describe("Test Component", () => {
   const renderComponent = () => render(<${componentName} {...props} />);
 
   it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+    props.foo = "Hello World";
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("${componentName}");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toHaveTextContent("Hello World");
   });
 });
 `,

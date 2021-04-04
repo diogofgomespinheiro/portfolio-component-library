@@ -1,10 +1,10 @@
-module.exports = componentName => ({
+module.exports = ({ componentName, componentType }) => ({
   content: `
 import * as React from "react";
 import ${componentName} from "./${componentName}";
 
 export default {
-    title: "${componentName}"
+    title: "${componentType}s/${componentName}"
 };
 
 export const WithBar = () => <${componentName} foo="bar" />;
