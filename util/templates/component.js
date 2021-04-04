@@ -1,13 +1,13 @@
-module.exports = ({ componentName }) => ({
-  content: `
-import * as React from "react";
+module.exports = ({ componentName, componentFileName }) => ({
+  content: `\
+import * as React from 'react';
 
-import { ${componentName}Props } from "./${componentName}.types";
+import { ${componentName}Props } from './${componentFileName}.types';
 
-import * as S from "./${componentName}.styles";
+import * as S from './${componentFileName}.styles';
 
 const ${componentName} = ({ foo }: ${componentName}Props): React.ReactElement => (
-    <div data-testid="${componentName}">{foo}</div>
+    <div data-testid="${componentFileName}">{foo}</div>
 );
 
 export default ${componentName};

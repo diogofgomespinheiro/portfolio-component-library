@@ -1,6 +1,7 @@
 require('colors');
 const fs = require('fs');
 const templates = require('./templates');
+const { toKebabCase } = require('./formats');
 
 const COMPONENT_TYPES = ['atom', 'molecule', 'organism'];
 
@@ -24,8 +25,9 @@ if (!componentName) {
 
 console.log('Creating Component Templates with name: ' + componentName.blue);
 
+const componentFileName = toKebabCase(componentName);
 const componentTypeDirectory = `./src/${componentType}s`;
-const componentDirectory = `${componentTypeDirectory}/${componentName}`;
+const componentDirectory = `${componentTypeDirectory}/${componentFileName}`;
 
 if (!fs.existsSync(componentTypeDirectory)) {
   fs.mkdirSync(componentTypeDirectory);
@@ -42,19 +44,19 @@ if (fs.existsSync(componentDirectory)) {
 fs.mkdirSync(componentDirectory);
 
 const generatedTemplates = templates.map(template =>
-  template({ componentName, componentType })
+  template({ componentFileName, componentName, componentType })
 );
 
 generatedTemplates.forEach(template => {
   fs.writeFileSync(
-    `${componentDirectory}/${componentName}${template.extension}`,
+    `${componentDirectory}/${componentFileName}${template.extension}`,
     template.content
   );
 });
 
 fs.writeFileSync(
   `${componentDirectory}/index.ts`,
-  `export { default } from './${componentName}'`
+  `export { default } from './${componentFileName}'`
 );
 
 console.log(

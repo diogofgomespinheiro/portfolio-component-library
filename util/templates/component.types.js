@@ -1,5 +1,5 @@
 module.exports = ({ componentName }) => ({
-  content: `
+  content: `\
 export type ${componentName}Props = {
     foo: string;
 }
