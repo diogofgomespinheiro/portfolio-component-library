@@ -21,7 +21,7 @@ describe('Test Component', () => {
     props.foo = 'Hello World';
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('${componentName}');
+    const component = getByTestId('${componentFileName}');
 
     expect(component).toHaveTextContent('Hello World');
   });
