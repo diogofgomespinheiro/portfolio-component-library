@@ -3,7 +3,7 @@ module.exports = ({ componentName, componentFileName }) => ({
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ${componentName} from './${componentFileName}';
+import { ${componentName} } from './${componentFileName}';
 import { ${componentName}Props } from './${componentFileName}.types';
 
 describe('Test Component', () => {

@@ -5,6 +5,11 @@ function toKebabCase(str) {
     .toLowerCase();
 }
 
+function isPascalCase(word) {
+  return /^[A-Z][A-Za-z]*$/.test(word);
+}
+
 module.exports = {
-  toKebabCase
+  toKebabCase,
+  isPascalCase
 };

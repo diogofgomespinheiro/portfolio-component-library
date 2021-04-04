@@ -10,7 +10,7 @@ const ${componentName} = ({ foo }: ${componentName}Props): React.ReactElement =>
     <div data-testid="${componentFileName}">{foo}</div>
 );
 
-export default ${componentName};
+export { ${componentName} };
 
 `,
   extension: `.tsx`

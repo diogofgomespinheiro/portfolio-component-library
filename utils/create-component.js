@@ -1,7 +1,7 @@
 require('colors');
 const fs = require('fs');
 const templates = require('./templates');
-const { toKebabCase } = require('./formats');
+const { toKebabCase, isPascalCase } = require('./formats');
 
 const COMPONENT_TYPES = ['atom', 'molecule', 'organism'];
 
@@ -14,6 +14,13 @@ if (!componentType || !COMPONENT_TYPES.includes(componentType)) {
     'It must be one of the following: ' +
       `[${COMPONENT_TYPES}]`.bgMagenta.white +
       '\n'
+  );
+  process.exit(1);
+}
+
+if (!isPascalCase(componentName)) {
+  console.error(
+    '\nThe component name must be in pascal case (ComponentName)\n'.red
   );
   process.exit(1);
 }
@@ -56,7 +63,7 @@ generatedTemplates.forEach(template => {
 
 fs.writeFileSync(
   `${componentDirectory}/index.ts`,
-  `export { default } from './${componentFileName}'`
+  `export * from './${componentFileName}'`
 );
 
 console.log(
