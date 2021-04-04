@@ -33,8 +33,13 @@ if (!componentName) {
 console.log('Creating Component Templates with name: ' + componentName.blue);
 
 const componentFileName = toKebabCase(componentName);
-const componentTypeDirectory = `./src/${componentType}s`;
+const componentsDirectory = './src/components';
+const componentTypeDirectory = `${componentsDirectory}/${componentType}s`;
 const componentDirectory = `${componentTypeDirectory}/${componentFileName}`;
+
+if (!fs.existsSync(componentsDirectory)) {
+  fs.mkdirSync(componentsDirectory);
+}
 
 if (!fs.existsSync(componentTypeDirectory)) {
   fs.mkdirSync(componentTypeDirectory);
