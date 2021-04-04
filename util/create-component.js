@@ -2,19 +2,40 @@ require('colors');
 const fs = require('fs');
 const templates = require('./templates');
 
-const componentName = process.argv[2];
+const COMPONENT_TYPES = ['atom', 'molecule', 'organism'];
+
+const componentType = process.argv[2];
+const componentName = process.argv[3];
+
+if (!componentType || !COMPONENT_TYPES.includes(componentType)) {
+  console.error('\nPlease supply a valid component type'.red);
+  console.error(
+    'It must be one of the following: ' +
+      `[${COMPONENT_TYPES}]`.bgMagenta.white +
+      '\n'
+  );
+  process.exit(1);
+}
 
 if (!componentName) {
-  console.error('Please supply a valid component name'.red);
+  console.error('\nPlease supply a valid component name\n'.red);
   process.exit(1);
 }
 
 console.log('Creating Component Templates with name: ' + componentName.blue);
 
-const componentDirectory = `./src/${componentName}`;
+const componentTypeDirectory = `./src/${componentType}s`;
+const componentDirectory = `${componentTypeDirectory}/${componentName}`;
+
+if (!fs.existsSync(componentTypeDirectory)) {
+  fs.mkdirSync(componentTypeDirectory);
+}
 
 if (fs.existsSync(componentDirectory)) {
-  console.error(`Component ${componentName} already exists.`.red);
+  console.error(
+    `\nComponent ${componentName} already exists under the ${componentType}s folder.\n`
+      .red
+  );
   process.exit(1);
 }
 
@@ -35,5 +56,5 @@ fs.writeFileSync(
 );
 
 console.log(
-  'Successfully created component under: ' + componentDirectory.green
+  '\nSuccessfully created component under: ' + componentDirectory.green
 );
