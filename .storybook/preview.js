@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withKnobs } from '@storybook/addon-knobs';
 
 import { loadFontsForStorybook } from '../utils/loadFontsForStorybook';
 import { GlobalStyle } from '../src/shared/global';
@@ -18,6 +19,6 @@ const withGlobalStyle = storyFn => (
   </>
 );
 
-export const decorators = [withGlobalStyle];
+export const decorators = [withGlobalStyle, withKnobs];
 
 loadFontsForStorybook();

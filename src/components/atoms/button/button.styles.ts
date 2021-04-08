@@ -1,15 +1,25 @@
 import styled from 'styled-components';
 
 import { theme } from './button.theme';
-import { ButtonAppearances } from './button.types';
+import {
+  ButtonAppearances,
+  ButtonColorsProps,
+  ButtonFlags
+} from './button.types';
 
-const getButtonStyle = (key: string) => ({
-  appearance
+const getButtonStyle = (key: keyof ButtonColorsProps) => ({
+  appearance,
+  customColors
 }: StyledButtonProps): string => {
-  return theme.colors[appearance][key];
+  return customColors?.[key] || theme.colors[appearance][key];
 };
 
-type StyledButtonProps = { appearance: ButtonAppearances };
+type StyledButtonProps = {
+  appearance: ButtonAppearances;
+  customColors?: ButtonColorsProps;
+  flags?: ButtonFlags;
+};
+
 export const Button = styled.button<StyledButtonProps>`
   padding: 8px 16px;
 
@@ -39,4 +49,10 @@ export const Button = styled.button<StyledButtonProps>`
   &:disabled {
     background-color: ${getButtonStyle('backgroundDisabled')};
   }
+
+  ${({ flags }) =>
+    flags?.hasShadow && {
+      boxShadow:
+        '1px 2px 4px rgba(61, 64, 91, 0.15), inset 2px 2px 4px rgba(250, 251, 255, 0.5);'
+    }}
 `;
