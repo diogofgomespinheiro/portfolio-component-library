@@ -9,6 +9,13 @@ export const parameters = {
   dependencies: {
     withStoriesOnly: true,
     hideEmpty: true
+  },
+  backgrounds: {
+    default: 'light',
+    values: [
+      { name: 'dark', value: '#100E17' },
+      { name: 'light', value: '#FAFBFF' }
+    ]
   }
 };
 
