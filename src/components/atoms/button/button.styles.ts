@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
 import { theme } from './button.theme';
-import {
-  ButtonAppearances,
-  ButtonColorsProps,
-  ButtonFlags
-} from './button.types';
+import { ButtonAppearances, ButtonColorsProps } from './button.types';
 
 const getButtonStyle = (key: keyof ButtonColorsProps) => ({
   appearance,
@@ -17,10 +13,11 @@ const getButtonStyle = (key: keyof ButtonColorsProps) => ({
 type StyledButtonProps = {
   appearance: ButtonAppearances;
   customColors?: ButtonColorsProps;
-  flags?: ButtonFlags;
+  showShadow?: boolean;
 };
 
 export const Button = styled.button<StyledButtonProps>`
+  box-sizing: inherit;
   padding: 8px 16px;
 
   border: none;
@@ -50,8 +47,8 @@ export const Button = styled.button<StyledButtonProps>`
     background-color: ${getButtonStyle('backgroundDisabled')};
   }
 
-  ${({ flags }) =>
-    flags?.hasShadow && {
+  ${({ showShadow }) =>
+    showShadow && {
       boxShadow:
         '1px 2px 4px rgba(61, 64, 91, 0.15), inset 2px 2px 4px rgba(250, 251, 255, 0.5);'
     }}

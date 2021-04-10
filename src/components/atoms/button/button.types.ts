@@ -1,14 +1,10 @@
 export type ButtonAppearances = 'lightOrange' | 'darkOrange';
 
-export type ButtonFlags = {
-  hasShadow: boolean;
-};
-
 export type ButtonProps = {
   elementType?: 'a' | 'button';
   appearance?: ButtonAppearances;
   customColors?: ButtonColorsProps;
-  flags?: ButtonFlags;
+  showShadow?: boolean;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 

@@ -13,10 +13,14 @@ export default {
 } as Meta;
 
 const Template: Story<ButtonProps> = args => {
-  return <Button {...args}>Button</Button>;
+  const { children = 'Button' } = args;
+  return <Button {...args} children={children} />;
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  children: 'Button'
+};
 
 export const Link = Template.bind({});
 Link.args = {
@@ -35,9 +39,7 @@ Disabled.args = {
 
 export const WithShadow = Template.bind({});
 WithShadow.args = {
-  flags: {
-    hasShadow: true
-  }
+  showShadow: true
 };
 
 export const Custom = () => {
@@ -83,9 +85,7 @@ export const All = () => (
     </ButtonWithMarginRight>
     <ButtonWithMarginRight appearance="darkOrange">Dark</ButtonWithMarginRight>
     <ButtonWithMarginRight disabled>Disabled</ButtonWithMarginRight>
-    <ButtonWithMarginRight flags={{ hasShadow: true }}>
-      Shadow
-    </ButtonWithMarginRight>
+    <ButtonWithMarginRight showShadow>Shadow</ButtonWithMarginRight>
     <Button
       customColors={{
         text: 'white',
