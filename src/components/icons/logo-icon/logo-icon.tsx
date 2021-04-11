@@ -24,9 +24,9 @@ const LogoIcon = ({ appearance = 'dark', ...otherProps }: LogoIconProps) => {
         d="M10 30V10H21.6583C32.7806 10 32.7806 30 21.6583 30H10Z"
         fill={isDark ? '#100E17' : '#FAFBFF'}
         stroke={isDark ? '#100E17' : '#FAFBFF'}
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M20 20V0H31.6583C42.7806 0 42.7806 20 31.6583 20H20Z"
