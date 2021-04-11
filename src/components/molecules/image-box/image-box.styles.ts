@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { CircleIcon } from '../../icons/circle';
-import { ImageMacWindowProps, DeviceOptions } from './image-mac-window.types';
+import { ImageBoxProps, DeviceOptions } from './image-box.types';
 
 const getWindowProp = (
   selectedProp: keyof WindowProps,
@@ -13,7 +13,7 @@ const getWindowProp = (
   return `${selectedValue}px`;
 };
 
-type WindowProps = Omit<ImageMacWindowProps, 'imgUrl'>;
+type WindowProps = Omit<ImageBoxProps, 'imgUrl'>;
 export const Window = styled.div<WindowProps>`
   width: ${getWindowProp('width', 'mobile')};
   height: ${getWindowProp('height', 'mobile')};

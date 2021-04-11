@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { ImageMacWindow } from './image-mac-window';
-import { ImageMacWindowProps } from './image-mac-window.types';
+import { ImageBox } from './image-box';
+import { ImageBoxProps } from './image-box.types';
 
 export default {
-  title: 'molecules/ImageMacWindow',
-  component: ImageMacWindow,
+  title: 'molecules/ImageBox',
+  component: ImageBox,
   argTypes: {
     imgUrl: {
       name: 'imgUrl',
@@ -49,7 +49,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<ImageMacWindowProps> = args => {
+const Template: Story<ImageBoxProps> = args => {
   return (
     <div
       style={{
@@ -58,7 +58,7 @@ const Template: Story<ImageMacWindowProps> = args => {
         maxWidth: '500px'
       }}
     >
-      <ImageMacWindow {...args} />
+      <ImageBox {...args} />
     </div>
   );
 };
@@ -71,7 +71,7 @@ Default.args = {
 
 export const WithCustomSizes = args => (
   <>
-    <ImageMacWindow
+    <ImageBox
       imgUrl="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
       {...args}
     />

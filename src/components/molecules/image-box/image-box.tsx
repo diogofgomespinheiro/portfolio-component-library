@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import { ImageMacWindowProps } from './image-mac-window.types';
+import { ImageBoxProps } from './image-box.types';
 
-import * as S from './image-mac-window.styles';
+import * as S from './image-box.styles';
 
-const ImageMacWindow = ({
+const ImageBox = ({
   imgUrl,
   ...othersProps
-}: ImageMacWindowProps): React.ReactElement => (
+}: ImageBoxProps): React.ReactElement => (
   <S.Window data-testid="image-mac-window" {...othersProps}>
     <S.Header>
       <S.Circle fill="#ED6960" />
@@ -18,4 +18,4 @@ const ImageMacWindow = ({
   </S.Window>
 );
 
-export { ImageMacWindow };
+export { ImageBox };
