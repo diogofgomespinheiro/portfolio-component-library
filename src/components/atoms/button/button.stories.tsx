@@ -27,11 +27,6 @@ Link.args = {
   elementType: 'a'
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-  appearance: 'darkOrange'
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true
@@ -40,32 +35,6 @@ Disabled.args = {
 export const WithShadow = Template.bind({});
 WithShadow.args = {
   showShadow: true
-};
-
-export const Custom = () => {
-  const groupId = 'Colors';
-  const customColors = {
-    text: color('Text Color', 'white', groupId),
-    background: color('Background Color', '#343435', groupId),
-    backgroundDisabled: color(
-      'Background Disabled Color',
-      'rgb(96, 88, 142, 0.5)',
-      groupId
-    ),
-    backgroundHover: color('Background Hover Color', '#60588E', groupId),
-    backgroundActive: color('Background Active Color', '#60588E', groupId)
-  };
-  const disabled = boolean('Disabled', false, 'Status');
-
-  return (
-    <Button
-      customColors={customColors}
-      disabled={disabled}
-      onClick={action('button action click')}
-    >
-      Resume
-    </Button>
-  );
 };
 
 const ButtonWithMarginRight = styled(Button)`
@@ -83,19 +52,7 @@ export const All = () => (
     <ButtonWithMarginRight elementType="a" href="#">
       Link
     </ButtonWithMarginRight>
-    <ButtonWithMarginRight appearance="darkOrange">Dark</ButtonWithMarginRight>
     <ButtonWithMarginRight disabled>Disabled</ButtonWithMarginRight>
     <ButtonWithMarginRight showShadow>Shadow</ButtonWithMarginRight>
-    <Button
-      customColors={{
-        text: 'white',
-        background: '#343435',
-        backgroundDisabled: 'rgb(96, 88, 142, 0.5)',
-        backgroundActive: '#60588E',
-        backgroundHover: '#60588E'
-      }}
-    >
-      Custom
-    </Button>
   </>
 );
