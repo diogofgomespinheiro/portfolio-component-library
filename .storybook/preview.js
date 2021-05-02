@@ -1,8 +1,12 @@
 import * as React from 'react';
+import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withThemesProvider } from 'themeprovider-storybook';
 
 import { loadFontsForStorybook } from '../utils/loadFontsForStorybook';
 import { GlobalStyle } from '../src/shared/global';
+import { darkTheme, lightTheme, shadesOfPurple } from '../src/shared/themes';
+const themes = [darkTheme, lightTheme, shadesOfPurple];
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -26,6 +30,8 @@ const withGlobalStyle = storyFn => (
   </>
 );
 
-export const decorators = [withGlobalStyle, withKnobs];
+addDecorator(withThemesProvider(themes));
+addDecorator(withGlobalStyle);
+addDecorator(withKnobs);
 
 loadFontsForStorybook();

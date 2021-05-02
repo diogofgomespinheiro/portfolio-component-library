@@ -6,7 +6,8 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
-    '@storybook/addon-knobs'
+    '@storybook/addon-knobs',
+    'themeprovider-storybook/register'
   ],
   webpackFinal: async config => {
     config.module.rules.push({
