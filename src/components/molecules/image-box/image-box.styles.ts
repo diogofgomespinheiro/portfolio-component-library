@@ -16,12 +16,10 @@ const getWindowProp = (
 type WindowProps = Omit<ImageBoxProps, 'imgUrl'>;
 export const Window = styled.div<WindowProps>`
   width: ${getWindowProp('width', 'mobile')};
-  height: ${getWindowProp('height', 'mobile')};
   border-radius: 20px;
 
   @media screen and (min-width: 768px) {
     width: ${getWindowProp('width', 'desktop')};
-    height: ${getWindowProp('height', 'desktop')};
   }
 `;
 
@@ -41,7 +39,7 @@ export const Circle = styled(CircleIcon)`
 type ImageContainerProps = { backgroundImage: string };
 export const ImageContainer = styled.div<ImageContainerProps>`
   width: 100%;
-  height: 100%;
+  padding-top: 75%;
   background-image: ${({ backgroundImage }) => `url('${backgroundImage}')`};
   background-position: center;
   background-repeat: no-repeat;

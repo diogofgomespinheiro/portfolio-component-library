@@ -18,20 +18,6 @@ export default {
         type: 'text'
       }
     },
-    height: {
-      type: { name: 'object', required: false },
-      table: {
-        type: {
-          summary: 'object',
-          detail: "{\n desktop: number | 'full',\n mobile: number | 'full'\n}"
-        }
-      },
-      defaultValue: {},
-      control: {
-        type: 'object',
-        defaultValue: {}
-      }
-    },
     width: {
       type: { name: 'object', required: false },
       table: {
@@ -53,7 +39,6 @@ const Template: Story<ImageBoxProps> = args => {
   return (
     <div
       style={{
-        height: '400px',
         width: '100%',
         maxWidth: '500px'
       }}
@@ -78,6 +63,5 @@ export const WithCustomSizes = args => (
   </>
 );
 WithCustomSizes.args = {
-  height: { desktop: 300, mobile: 300 },
   width: { desktop: 450, mobile: 'full' }
 };
