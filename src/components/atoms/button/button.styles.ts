@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getPropFromPallete } from '../../../shared/utils';
+import { getPropFromColors } from '../../../styles';
 
 type StyledButtonProps = {
   showShadow?: boolean;
@@ -19,22 +19,22 @@ export const Button = styled.button<StyledButtonProps>`
   line-height: 1rem;
   text-decoration: none;
 
-  color: ${getPropFromPallete('button', 'text')};
-  background-color: ${getPropFromPallete('button', 'background')};
+  color: ${getPropFromColors('button', 'text')};
+  background-color: ${getPropFromColors('button', 'background')};
   transition: background-color 0.3s ease;
 
   cursor: pointer;
 
   &:hover {
-    background-color: ${getPropFromPallete('button', 'backgroundHover')};
+    background-color: ${getPropFromColors('button', 'backgroundHover')};
   }
 
   &:active {
-    background-color: ${getPropFromPallete('button', 'backgroundActive')};
+    background-color: ${getPropFromColors('button', 'backgroundActive')};
   }
 
   &:disabled {
-    background-color: ${getPropFromPallete('button', 'backgroundDisabled')};
+    background-color: ${getPropFromColors('button', 'backgroundDisabled')};
   }
 
   ${({ showShadow }) =>

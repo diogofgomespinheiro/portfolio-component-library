@@ -1,4 +1,4 @@
-import { fontUrl } from '../src/shared/global';
+import { fontUrl } from '../src/styles/global';
 
 const fontLinkId = 'storybook-font-link-tag';
 

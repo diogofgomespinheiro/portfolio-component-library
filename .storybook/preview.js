@@ -4,9 +4,9 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withThemesProvider } from 'themeprovider-storybook';
 
 import { loadFontsForStorybook } from '../utils/loadFontsForStorybook';
-import { GlobalStyle } from '../src/shared/global';
-import { darkTheme, lightTheme, shadesOfPurple } from '../src/shared/themes';
-const themes = [darkTheme, lightTheme, shadesOfPurple];
+import { GlobalStyle } from '../src/styles/global';
+import { darkTheme, lightTheme, shadesOfPurpleTheme } from '../src/styles';
+const themes = [darkTheme, lightTheme, shadesOfPurpleTheme];
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },

@@ -1,1 +1,0 @@
-export { fontUrl } from './global';

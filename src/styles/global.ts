@@ -1,9 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { typography } from './styles';
+import { typography } from './themes';
 
 export const bodyStyles = css`
-  font-family: ${typography.type.primary};
-
   margin: 0;
   overflow-y: auto;
   overflow-x: hidden;
@@ -28,12 +26,7 @@ export const bodyStyles = css`
     padding: 0;
   }
 
-  button,
-  input,
-  textarea,
-  select {
-    font-family: ${typography.type.primary};
-  }
+  ${typography};
 `;
 
 export const fontUrl =
