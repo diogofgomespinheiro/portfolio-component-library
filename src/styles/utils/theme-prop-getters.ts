@@ -2,29 +2,27 @@ import { DefaultTheme } from 'styled-components';
 const defaultTheme: DefaultTheme = {} as DefaultTheme;
 
 export const getPropFromColors = <
-  KOutter extends keyof typeof defaultTheme.colors,
-  KInner extends keyof typeof defaultTheme.colors[KOutter]
+  C extends keyof typeof defaultTheme.colors,
+  P extends keyof typeof defaultTheme.colors[C]
 >(
-  component: KOutter,
-  colorProp: KInner
-) => ({
-  theme
-}: {
-  theme: DefaultTheme;
-}): typeof defaultTheme.colors[KOutter][KInner] => {
+  component: C,
+  colorProp: P
+) => ({ theme }: { theme: DefaultTheme }): typeof defaultTheme.colors[C][P] => {
   return theme.colors[component][colorProp];
 };
 
 export const getPropFromDimensions = <
-  KOutter extends keyof typeof defaultTheme.dimensions,
-  KInner extends keyof typeof defaultTheme.dimensions[KOutter]
+  C extends keyof typeof defaultTheme.dimensions,
+  S extends keyof typeof defaultTheme.dimensions[C],
+  P extends keyof typeof defaultTheme.dimensions[C][S]
 >(
-  component: KOutter,
-  colorProp: KInner
+  component: C,
+  size: S,
+  dimensionProp: P
 ) => ({
   theme
 }: {
   theme: DefaultTheme;
-}): typeof defaultTheme.dimensions[KOutter][KInner] => {
-  return theme.dimensions[component][colorProp];
+}): typeof defaultTheme.dimensions[C][S][P] => {
+  return theme.dimensions[component][size][dimensionProp];
 };

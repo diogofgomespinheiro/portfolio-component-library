@@ -17,19 +17,6 @@ const argTypes = {
       type: 'text'
     }
   },
-  appearance: {
-    name: 'appearance',
-    type: { name: 'string', required: false },
-    defaultValue: 'dark',
-    table: {
-      type: { summary: 'dark | light' },
-      defaultValue: { summary: 'dark' }
-    },
-    control: {
-      type: 'radio',
-      options: ['dark', 'light']
-    }
-  },
   dimension: {
     name: 'dimension',
     type: { name: 'string', required: false },
@@ -77,7 +64,7 @@ const TagWithMargin = styled(Tag)`
 `;
 
 const Paragraph = styled.p`
-  color: #de9d7b;
+  color: #8f8f8f;
   font-weight: bold;
 `;
 
@@ -92,13 +79,6 @@ export const Default = Template.bind({});
 Default.story = {
   argTypes
 };
-
-export const Appearances = () => (
-  <>
-    <TagWithMargin appearance="dark">Dark</TagWithMargin>
-    <TagWithMargin appearance="light">Light</TagWithMargin>
-  </>
-);
 
 export const Dimensions = () => (
   <>
@@ -123,10 +103,6 @@ WithAnimations.args = {
 
 export const All = () => (
   <>
-    <div style={{ padding: '10px' }}>
-      <Paragraph>Appearances:</Paragraph>
-      <Appearances />
-    </div>
     <div style={{ padding: '10px' }}>
       <Paragraph>Dimensions:</Paragraph>
       <Dimensions />

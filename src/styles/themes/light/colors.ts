@@ -9,7 +9,7 @@ export const colors: Colors = {
     backgroundActive: '#d5683f'
   },
   tag: {
-    background: 'rgba(255, 255, 255, 0.05)',
+    background: 'rgba(85, 91, 110, 0.03)',
     backgroundHover: 'rgba(222, 157, 123, 0.1)',
     backgroundActive: 'rgba(222, 157, 123, 0.3)',
     border: '#DE9D7B',
