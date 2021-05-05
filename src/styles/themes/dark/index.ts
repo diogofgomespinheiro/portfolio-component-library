@@ -5,7 +5,9 @@ import { dimensions, text } from '../shared';
 
 export const darkTheme: DefaultTheme = {
   name: 'Dark',
-  colors,
-  dimensions,
-  text
+  componentLib: {
+    colors,
+    dimensions,
+    text
+  }
 };

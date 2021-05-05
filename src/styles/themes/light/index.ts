@@ -5,7 +5,9 @@ import { dimensions, text } from '../shared';
 
 export const lightTheme: DefaultTheme = {
   name: 'Light',
-  colors,
-  dimensions,
-  text
+  componentLib: {
+    colors,
+    dimensions,
+    text
+  }
 };

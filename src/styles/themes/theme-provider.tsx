@@ -3,12 +3,16 @@ import { ThemeProvider as ScThemeProvider } from 'styled-components';
 
 import { Colors, Dimensions, Text } from './shared';
 
-export interface PersonalLibraryTheme {
-  name: string;
+export type CustomLibraryTheme = {
   colors: Colors;
   dimensions: Dimensions;
   text: Text;
-}
+};
+
+export type PersonalLibraryTheme = {
+  name: string;
+  componentLib: CustomLibraryTheme;
+};
 
 export namespace PersonalLibraryThemeProvider {
   export interface Props {
