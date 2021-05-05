@@ -4,4 +4,5 @@ export type TagProps = {
   dimension?: DimensionOptions;
   showBorder?: boolean;
   showAnimation?: boolean;
+  transparent?: boolean;
 };

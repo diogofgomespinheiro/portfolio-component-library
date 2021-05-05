@@ -56,6 +56,19 @@ const argTypes = {
       type: 'boolean',
       defaultValue: false
     }
+  },
+  transparent: {
+    name: 'transparent',
+    type: { name: 'boolean', required: false },
+    defaultValue: false,
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false }
+    },
+    control: {
+      type: 'boolean',
+      defaultValue: false
+    }
   }
 };
 
@@ -95,6 +108,12 @@ WithBorder.args = {
   showBorder: true
 };
 
+export const Transparent = Template.bind({});
+Transparent.args = {
+  children: 'React',
+  transparent: true
+};
+
 export const WithAnimations = Template.bind({});
 WithAnimations.args = {
   children: 'React',
@@ -110,6 +129,7 @@ export const All = () => (
     <div style={{ padding: '10px' }}>
       <Paragraph>With Flags:</Paragraph>
       <TagWithMargin showBorder>Border</TagWithMargin>
+      <TagWithMargin transparent>Transparent</TagWithMargin>
       <TagWithMargin showAnimation>Animated</TagWithMargin>
     </div>
   </>

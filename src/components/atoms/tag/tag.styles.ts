@@ -5,7 +5,8 @@ import {
   getPropFromColors,
   getPropFromDimensions,
   TagDimensionProps,
-  DimensionOptions
+  DimensionOptions,
+  body3Mixin
 } from '../../../styles';
 
 const getTagDimensionPropValue = (prop: keyof TagDimensionProps) => ({
@@ -21,18 +22,20 @@ export const Tag = styled.button<TagProps>`
     ${getTagDimensionPropValue('paddingX')}px;
 
   outline: none;
-  border: ${({ showBorder, theme }) =>
-    showBorder
+  border: ${({ showBorder, transparent, theme }) =>
+    showBorder || transparent
       ? `2px solid ${getPropFromColors('tag', 'border')({ theme })}`
       : '2px solid transparent'};
   border-radius: ${getTagDimensionPropValue('borderRadius')}px;
 
-  font-weight: 500;
-  font-size: 0.875rem;
+  ${body3Mixin};
   line-height: 1rem;
   text-decoration: none;
 
-  background-color: ${getPropFromColors('tag', 'background')};
+  background-color: ${({ theme, transparent }) =>
+    transparent
+      ? 'transparent'
+      : getPropFromColors('tag', 'background')({ theme })};
   color: ${getPropFromColors('tag', 'text')};
 
   ${({ showAnimation }) => {
@@ -55,4 +58,9 @@ export const Tag = styled.button<TagProps>`
   }}
 
   cursor: pointer;
+
+  &[disabled],
+  &[aria-disabled] {
+    cursor: default;
+  }
 `;

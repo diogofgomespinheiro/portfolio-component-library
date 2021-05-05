@@ -14,5 +14,10 @@ export const colors: Colors = {
     backgroundActive: 'rgba(222, 157, 123, 0.3)',
     border: '#DE9D7B',
     text: '#DE9D7B'
+  },
+  projectCard: {
+    background: 'rgba(250, 251, 255, 0.05)',
+    primaryText: '#FAFBFF',
+    secondaryText: '#A2A5AF'
   }
 };

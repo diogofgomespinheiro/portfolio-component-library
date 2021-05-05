@@ -1,5 +1,5 @@
-type HeadingSizes = 'h1' | 'h2' | 'h3' | 'h4';
-type BodySizes = 'body1' | 'body2' | 'body3' | 'body4';
+type HeadingSizes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type BodySizes = 'body1' | 'body2' | 'body3' | 'body4' | 'body5';
 type WeightTypes = 'light' | 'regular' | 'medium' | 'semiBold' | 'bold';
 
 export type Text = {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getPropFromColors } from '../../../styles';
+import { getPropFromColors, body3Mixin } from '../../../styles';
 
 type StyledButtonProps = {
   showShadow?: boolean;
@@ -14,8 +14,7 @@ export const Button = styled.button<StyledButtonProps>`
   border-radius: 8px;
   outline: none;
 
-  font-weight: 500;
-  font-size: 0.75rem;
+  ${body3Mixin};
   line-height: 1rem;
   text-decoration: none;
 

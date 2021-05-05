@@ -6,7 +6,7 @@ import { withThemesProvider } from 'themeprovider-storybook';
 import { loadFontsForStorybook } from '../utils/loadFontsForStorybook';
 import { GlobalStyle } from '../src/styles/global';
 import { darkTheme, lightTheme, shadesOfPurpleTheme } from '../src/styles';
-const themes = [darkTheme, lightTheme, shadesOfPurpleTheme];
+const themes = [lightTheme, darkTheme, shadesOfPurpleTheme];
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
