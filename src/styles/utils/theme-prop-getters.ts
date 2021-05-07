@@ -32,8 +32,6 @@ export const getPropFromDimensions = <
   : typeof defaultTheme.componentLib.dimensions[Key][InnerKey][InnerInnerKey] => {
   const innerKeyValue = theme.componentLib.dimensions[key][innerKey];
 
-  console.log(innerKey);
-
   return (isPrimitive(innerKeyValue) && !innerInnerKey
     ? innerKeyValue
     : innerKeyValue[innerInnerKey]) as typeof innerInnerKey extends

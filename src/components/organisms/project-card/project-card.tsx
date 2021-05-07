@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ProjectCardProps } from './project-card.types';
 
 import { ImageBox } from '../../molecules/image-box/image-box';
+import { cloneValidElement } from '../../../utils';
 
 import * as S from './project-card.styles';
 
@@ -23,10 +24,18 @@ const ProjectCard = ({
         <S.Description>{description}</S.Description>
       </S.InfoContainer>
       {Boolean(listItems.length) && (
-        <S.ListContainer>{listItems}</S.ListContainer>
+        <S.ListContainer>
+          {React.Children.map(listItems, child => {
+            return cloneValidElement(child);
+          })}
+        </S.ListContainer>
       )}
       {Boolean(buttons.length) && (
-        <S.ButtonsContainer>{buttons}</S.ButtonsContainer>
+        <S.ButtonsContainer>
+          {React.Children.map(buttons, child => {
+            return cloneValidElement(child);
+          })}
+        </S.ButtonsContainer>
       )}
     </S.ContentContainer>
   </S.Container>
