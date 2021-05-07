@@ -13,7 +13,7 @@ const getWindowProp = (
   return `${selectedValue}px`;
 };
 
-type WindowProps = Omit<ImageBoxProps, 'imgUrl'>;
+type WindowProps = Omit<ImageBoxProps, 'children'>;
 export const Window = styled.div<WindowProps>`
   width: ${getWindowProp('width', 'mobile')};
   border-radius: 20px;
@@ -36,13 +36,18 @@ export const Circle = styled(CircleIcon)`
   }
 `;
 
-type ImageContainerProps = { backgroundImage: string };
-export const ImageContainer = styled.div<ImageContainerProps>`
+export const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
   padding-top: 75%;
-  background-image: ${({ backgroundImage }) => `url('${backgroundImage}')`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 0 0 20px 20px;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 0 20px 20px;
+  }
 `;

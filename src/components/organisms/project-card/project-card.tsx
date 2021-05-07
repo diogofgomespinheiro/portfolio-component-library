@@ -10,13 +10,13 @@ import * as S from './project-card.styles';
 const ProjectCard = ({
   title,
   description,
-  imageUrl,
+  imgComponent,
   listItems = [],
   buttons = []
 }: ProjectCardProps): React.ReactElement => (
   <S.Container data-testid="project-card">
     <S.ImageWrapper>
-      <ImageBox imgUrl={imageUrl} />
+      <ImageBox>{imgComponent}</ImageBox>
     </S.ImageWrapper>
     <S.ContentContainer>
       <S.InfoContainer>

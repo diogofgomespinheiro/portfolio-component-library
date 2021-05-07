@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { color, boolean } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import { Button } from './button';

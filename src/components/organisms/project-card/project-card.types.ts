@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export type ProjectCardProps = {
   title: string;
   description: string;
-  imageUrl: string;
+  imgComponent: ReactNode;
   listItems?: ReactElement[];
   buttons?: ReactElement[];
 };

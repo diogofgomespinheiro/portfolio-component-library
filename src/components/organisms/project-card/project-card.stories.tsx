@@ -5,7 +5,13 @@ import { ProjectCard } from './project-card';
 import { ProjectCardProps } from './project-card.types';
 
 import { Button, Tag } from '../../atoms';
-import { EyeIcon } from '../../icons';
+
+const Image = () => (
+  <img
+    src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+    alt="default-image"
+  />
+);
 
 const argTypes = {
   title: {
@@ -32,18 +38,12 @@ const argTypes = {
       defaultValue: 'Project Description'
     }
   },
-  imageUrl: {
-    name: 'imageUrl',
-    defaultValue:
-      'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
+  imgComponent: {
+    name: 'imgComponent',
+    defaultValue: <Image />,
     type: { name: 'string', required: true },
     table: {
       type: { summary: 'string' }
-    },
-    control: {
-      type: 'text',
-      defaultValue:
-        'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80'
     }
   }
 };

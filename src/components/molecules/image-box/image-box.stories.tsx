@@ -4,18 +4,23 @@ import { Story, Meta } from '@storybook/react';
 import { ImageBox } from './image-box';
 import { ImageBoxProps } from './image-box.types';
 
+const Image = () => (
+  <img
+    src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+    alt="default-image"
+  />
+);
+
 export default {
   title: 'molecules/ImageBox',
   component: ImageBox,
   argTypes: {
-    imgUrl: {
-      name: 'imgUrl',
-      type: { name: 'string', required: true },
+    children: {
+      name: 'children',
+      type: { name: 'ReactElement', required: false },
+      defaultValue: <Image />,
       table: {
-        type: { summary: 'string' }
-      },
-      control: {
-        type: 'text'
+        type: { summary: 'ReactElement' }
       }
     },
     width: {
@@ -50,16 +55,14 @@ const Template: Story<ImageBoxProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-  imgUrl:
-    'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80'
+  children: <Image />
 };
 
 export const WithCustomSizes = args => (
   <>
-    <ImageBox
-      imgUrl="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
-      {...args}
-    />
+    <ImageBox {...args}>
+      <Image />
+    </ImageBox>
   </>
 );
 WithCustomSizes.args = {
