@@ -8,6 +8,11 @@ export const colors: Colors = {
     backgroundHover: '#de8969',
     backgroundActive: '#d5683f'
   },
+  tabs: {
+    primaryText: '#555B6E',
+    secondaryText: '#A2A5AF',
+    selectedText: '#DE9D7B'
+  },
   tag: {
     background: 'rgba(85, 91, 110, 0.03)',
     backgroundHover: 'rgba(222, 157, 123, 0.1)',

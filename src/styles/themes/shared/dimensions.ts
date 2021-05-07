@@ -22,5 +22,21 @@ export const dimensions: Dimensions = {
       paddingX: 128,
       borderRadius: 20
     }
+  },
+  tabs: {
+    mobile: {
+      tabsList: {
+        margin: '0 0 20px 0',
+        gap: 15
+      }
+    },
+    desktop: {
+      tabsList: {
+        margin: '0 0 20px 0',
+        gap: 40
+      }
+    },
+    maxWidth: 615,
+    maxHeight: 250
   }
 };

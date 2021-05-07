@@ -16,17 +16,36 @@ export const getPropFromColors = <
 };
 
 export const getPropFromDimensions = <
-  C extends keyof typeof defaultTheme.componentLib.dimensions,
-  S extends keyof typeof defaultTheme.componentLib.dimensions[C],
-  P extends keyof typeof defaultTheme.componentLib.dimensions[C][S]
+  Key extends keyof typeof defaultTheme.componentLib.dimensions,
+  InnerKey extends keyof typeof defaultTheme.componentLib.dimensions[Key],
+  InnerInnerKey extends keyof typeof defaultTheme.componentLib.dimensions[Key][InnerKey]
 >(
-  component: C,
-  size: S,
-  dimensionProp: P
+  key: Key,
+  innerKey: InnerKey,
+  innerInnerKey?: InnerInnerKey
 ) => ({
   theme
 }: {
   theme: DefaultTheme;
-}): typeof defaultTheme.componentLib.dimensions[C][S][P] => {
-  return theme.componentLib.dimensions[component][size][dimensionProp];
+}): typeof innerInnerKey extends undefined | null
+  ? typeof defaultTheme.componentLib.dimensions[Key][InnerKey]
+  : typeof defaultTheme.componentLib.dimensions[Key][InnerKey][InnerInnerKey] => {
+  const innerKeyValue = theme.componentLib.dimensions[key][innerKey];
+
+  console.log(innerKey);
+
+  return (isPrimitive(innerKeyValue) && !innerInnerKey
+    ? innerKeyValue
+    : innerKeyValue[innerInnerKey]) as typeof innerInnerKey extends
+    | undefined
+    | null
+    ? typeof defaultTheme.componentLib.dimensions[Key][InnerKey]
+    : typeof defaultTheme.componentLib.dimensions[Key][InnerKey][InnerInnerKey];
 };
+
+function isPrimitive(value: any): boolean {
+  const primitiveValues = ['string', 'boolean', 'number', 'bigint'];
+  const valueType = typeof value;
+
+  return primitiveValues.includes(valueType);
+}
