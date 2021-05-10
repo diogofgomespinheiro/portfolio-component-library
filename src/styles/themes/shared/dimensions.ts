@@ -37,6 +37,7 @@ export const dimensions: Dimensions = {
       }
     },
     maxWidth: 615,
-    maxHeight: 250
+    maxHeight: 250,
+    height: 250
   }
 };

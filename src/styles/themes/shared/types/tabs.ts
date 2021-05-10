@@ -15,4 +15,5 @@ export type TabsDimensionProps = Record<
 > & {
   maxWidth: number;
   maxHeight: number;
+  height?: number;
 };

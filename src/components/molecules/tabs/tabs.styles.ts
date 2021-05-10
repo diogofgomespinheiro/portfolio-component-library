@@ -58,6 +58,10 @@ export const Tab = styled.div<Pick<TabProps, 'isSelected'>>`
 export const TabsPanelsContainer = styled.div`
   max-height: ${({ theme }) =>
     `${getPropFromDimensions('tabs', 'maxHeight')({ theme })}px`};
+  height: ${({ theme }) => {
+    const height = theme.componentLib.dimensions.tabs.height;
+    return Boolean(height) ? `${height}px` : 'auto';
+  }};
   overflow-y: scroll;
 
   -ms-overflow-style: none;
