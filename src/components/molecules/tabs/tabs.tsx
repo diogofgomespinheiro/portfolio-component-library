@@ -86,7 +86,13 @@ const SimpleTabsPanelContent = ({ items }: SimpleTabsPanelContentProps) => {
             {Boolean(item.icons?.length) && (
               <S.SimpleTabsPanelItemSubIconsContainer>
                 {item.icons.map(icon => (
-                  <img key={icon.url} src={icon.url} alt={icon.alt} />
+                  <img
+                    key={icon.url}
+                    src={icon.url}
+                    alt={icon.alt}
+                    height={icon.height}
+                    width={icon.width}
+                  />
                 ))}
               </S.SimpleTabsPanelItemSubIconsContainer>
             )}

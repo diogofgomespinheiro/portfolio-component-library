@@ -37,6 +37,8 @@ export type SimpleTabsPanelContentItem = {
   icons?: {
     url: string;
     alt: string;
+    height?: number;
+    width?: number;
   }[];
 };
 
