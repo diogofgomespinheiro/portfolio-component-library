@@ -43,8 +43,8 @@ export const ImageContainer = styled.div`
   border-radius: 0 0 20px 20px;
 
   & > * {
-    position: absolute;
-    top: 0;
+    position: absolute !important;
+    top: 0 !important;
     height: 100%;
     width: 100%;
     object-fit: cover;
