@@ -37,16 +37,21 @@ export const Container = styled.div`
 export const ImageWrapper = styled.div`
   width: 100%;
 
-  @media screen and (${deviceQueries.mobileL.min}) {
-    min-width: 352px;
-    width: 40%;
+  @media screen and (${deviceQueries.tablet.min}) {
+    min-width: 250px;
+    width: 50%;
   }
 `;
 
 export const ContentContainer = styled.div`
   height: 100%;
   flex: 1;
+  width: 100%;
   max-width: 360px;
+
+  @media screen and (${deviceQueries.tablet.min}) {
+    width: 50%;
+  }
 `;
 
 export const InfoContainer = styled.div`
