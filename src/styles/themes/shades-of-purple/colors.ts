@@ -24,5 +24,12 @@ export const colors: Colors = {
     background: 'rgba(96, 88, 142, 0.1)',
     primaryText: '#60588E',
     secondaryText: '#333333'
+  },
+  hamburguer: {
+    strokeColor: '#60588E'
+  },
+  logo: {
+    primary: '#DE9D7B',
+    secondary: '#60588E'
   }
 };
