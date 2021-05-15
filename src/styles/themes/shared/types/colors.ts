@@ -4,6 +4,8 @@ import { ProjectCardColorProps } from './project-card';
 import { TabsColorProps } from './tabs';
 import { HamburguerColorProps } from './hamburguer';
 import { LogoColorProps } from './logo';
+import { SunIconColorProps } from './sun-icon';
+import { MoonIconColorProps } from './moon-icon';
 
 export type Colors = {
   button: ButtonColorProps;
@@ -12,4 +14,6 @@ export type Colors = {
   projectCard: ProjectCardColorProps;
   hamburguer: HamburguerColorProps;
   logo: LogoColorProps;
+  sunIcon: SunIconColorProps;
+  moonIcon: MoonIconColorProps;
 };

@@ -29,7 +29,13 @@ export const colors: Colors = {
     strokeColor: '#60588E'
   },
   logo: {
-    primary: '#DE9D7B',
-    secondary: '#60588E'
+    primary: '#60588E',
+    secondary: '#FAFBFF'
+  },
+  sunIcon: {
+    color: '#60588E'
+  },
+  moonIcon: {
+    color: '#60588E'
   }
 };

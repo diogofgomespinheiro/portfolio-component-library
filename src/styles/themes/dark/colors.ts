@@ -31,5 +31,11 @@ export const colors: Colors = {
   logo: {
     primary: '#DE9D7B',
     secondary: '#FAFBFF'
+  },
+  sunIcon: {
+    color: '#FAFBFF'
+  },
+  moonIcon: {
+    color: '#FAFBFF'
   }
 };
