@@ -1,5 +1,4 @@
-import type * as React from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Hamburguer as HamburguerIcon } from '../../icons';
 import {
@@ -81,7 +80,7 @@ export const MenuList = styled.ul<MenuListProps>`
   margin: 0;
   top: 72px;
   left: -100%;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease;
   list-style: none;
 
   display: flex;
@@ -91,6 +90,7 @@ export const MenuList = styled.ul<MenuListProps>`
   gap: 40px;
   background: ${getPropFromColors('navbar', 'mobileBackground')};
   backdrop-filter: ${getPropFromColors('navbar', 'backdropFilter')};
+  opacity: 0;
 
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -102,6 +102,7 @@ export const MenuList = styled.ul<MenuListProps>`
   ${({ isOpen }) =>
     isOpen &&
     css`
+      opacity: 1;
       transform: translateX(100%);
     `};
 
