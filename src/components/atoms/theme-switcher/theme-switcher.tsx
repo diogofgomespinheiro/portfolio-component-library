@@ -8,14 +8,23 @@ import * as S from './theme-switcher.styles';
 
 const ThemeSwitcher = ({
   onClick,
-  initialState = true
+  initialState = true,
+  controlledState
 }: ThemeSwitcherProps): React.ReactElement => {
-  const [isDark, setIsDark] = React.useState(initialState);
+  const [isDark, setIsDark] =
+    typeof controlledState === 'undefined'
+      ? React.useState(initialState)
+      : [controlledState];
+
+  const handleThemeSwitch = (evt: React.MouseEvent<HTMLDivElement>) => {
+    evt.preventDefault();
+    if (typeof controlledState !== 'undefined') return;
+
+    setIsDark(prevState => !prevState);
+  };
 
   return (
-    <S.Container
-      onClick={callAll(onClick, () => setIsDark(prevState => !prevState))}
-    >
+    <S.Container onClick={callAll(onClick, handleThemeSwitch)}>
       {isDark ? <MoonIcon /> : <SunIcon />}
     </S.Container>
   );

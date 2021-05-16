@@ -6,10 +6,10 @@ const SunIcon = () => {
   return (
     <S.Container
       xmlns="http://www.w3.org/2000/svg"
-      width="21"
-      height="21"
+      width="20"
+      height="20"
       fill="none"
-      viewBox="0 0 21 21"
+      viewBox="0 0 20 20"
     >
       <circle cx="10.884" cy="10.9" r="5.9" strokeWidth="0.079"></circle>
       <path

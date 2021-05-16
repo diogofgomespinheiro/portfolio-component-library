@@ -1,4 +1,5 @@
 export type ThemeSwitcherProps = {
-  onClick: () => void;
+  onClick?: () => void;
   initialState?: boolean;
+  controlledState?: boolean;
 };

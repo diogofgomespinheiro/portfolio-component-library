@@ -37,5 +37,12 @@ export const colors: Colors = {
   },
   moonIcon: {
     color: '#555B6E'
+  },
+  navbar: {
+    background: 'rgba(250, 251, 255, 0.5)',
+    mobileBackground: 'rgba(250, 251, 255, 0.92)',
+    backdropFilter: 'blur(20px)',
+    textColor: '#555B6E',
+    hightlightedTextColor: '#DE9D7B'
   }
 };

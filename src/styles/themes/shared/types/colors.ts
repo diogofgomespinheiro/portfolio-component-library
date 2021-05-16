@@ -6,6 +6,7 @@ import { HamburguerColorProps } from './hamburguer';
 import { LogoColorProps } from './logo';
 import { SunIconColorProps } from './sun-icon';
 import { MoonIconColorProps } from './moon-icon';
+import { NavbarColorProps } from './navbar';
 
 export type Colors = {
   button: ButtonColorProps;
@@ -16,4 +17,5 @@ export type Colors = {
   logo: LogoColorProps;
   sunIcon: SunIconColorProps;
   moonIcon: MoonIconColorProps;
+  navbar: NavbarColorProps;
 };

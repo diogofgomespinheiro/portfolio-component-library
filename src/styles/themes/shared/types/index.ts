@@ -5,6 +5,7 @@ export * from './hamburguer';
 export * from './logo';
 export * from './sun-icon';
 export * from './moon-icon';
+export * from './navbar';
 
 export * from './colors';
 export * from './dimensions';

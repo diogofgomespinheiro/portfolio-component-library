@@ -3,8 +3,6 @@ import { typography } from './themes';
 
 export const bodyStyles = css`
   margin: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,6 +33,10 @@ export const fontUrl =
 export const GlobalStyle = createGlobalStyle`
   body {
     ${bodyStyles}
+
+    &.hide-scroll {
+      overflow: hidden;
+    }
   }
 
   :focus:not(:focus-visible) {
