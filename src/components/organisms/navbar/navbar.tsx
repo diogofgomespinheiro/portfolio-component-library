@@ -9,10 +9,11 @@ const Navbar = ({
   icon,
   menuListItems,
   extraMenuItem,
-  extraItems
+  extraItems,
+  selectedMenuListItem = 0
 }: NavbarProps): React.ReactElement => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState(0);
+  const [selectedItem, setSelectedItem] = React.useState(selectedMenuListItem);
 
   const handleHamburguerClick = (evt: React.MouseEvent<HTMLDivElement>) => {
     evt.preventDefault();
