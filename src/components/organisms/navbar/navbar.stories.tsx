@@ -18,6 +18,7 @@ const Template: Story<NavbarProps> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
+  position: 'relative',
   icon: <LogoIcon onClick={action('Logo Icon Clicked')} />,
   menuListItems: [
     <span onClick={action('Home Item Clicked!')}>Home</span>,

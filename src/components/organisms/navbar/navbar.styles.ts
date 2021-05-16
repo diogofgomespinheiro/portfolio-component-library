@@ -9,8 +9,9 @@ import {
   h5Mixin
 } from '../../../styles';
 
-export const Nav = styled.nav`
-  position: fixed;
+type NavProps = { position: 'fixed' | 'relative' | 'absolute' };
+export const Nav = styled.nav<NavProps>`
+  position: ${({ position = 'fixed' }) => position};
   top: 0;
   right: 0;
   display: flex;

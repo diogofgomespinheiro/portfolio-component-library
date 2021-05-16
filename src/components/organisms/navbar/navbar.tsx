@@ -6,6 +6,7 @@ import { NavbarProps } from './navbar.types';
 import * as S from './navbar.styles';
 
 const Navbar = ({
+  position,
   icon,
   menuListItems,
   extraMenuItem,
@@ -27,7 +28,7 @@ const Navbar = ({
   };
 
   return (
-    <S.Nav data-testid="navbar">
+    <S.Nav data-testid="navbar" position={position}>
       <S.Wrapper>
         {Boolean(icon) && <S.NavIcon>{React.Children.only(icon)}</S.NavIcon>}
         <S.Menu>
@@ -37,12 +38,25 @@ const Navbar = ({
                 <S.MenuListItem
                   isSelected={selectedItem === index}
                   key={`menu-list-item-${index}`}
-                  onClick={callAll(
-                    () => setSelectedItem(index),
-                    handleHamburguerClick
-                  )}
                 >
-                  {child}
+                  {child.type === 'string' || !child.type ? (
+                    <span
+                      onClick={callAll(
+                        () => setSelectedItem(index),
+                        handleHamburguerClick
+                      )}
+                    >
+                      {child}
+                    </span>
+                  ) : (
+                    React.cloneElement(child, {
+                      onClick: callAll(
+                        () => setSelectedItem(index),
+                        handleHamburguerClick,
+                        child.props?.onClick
+                      )
+                    })
+                  )}
                 </S.MenuListItem>
               ))}
               {Boolean(extraMenuItem) && (
