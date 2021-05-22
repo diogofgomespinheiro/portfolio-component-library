@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Navbar } from './navbar';
+import { NavbarProvider } from './navbar.context';
 import { NavbarProps } from './navbar.types';
 import { Button, ThemeSwitcher } from '../../atoms';
 import { LogoIcon } from '../../icons';
@@ -13,7 +14,11 @@ export default {
 } as Meta;
 
 const Template: Story<NavbarProps> = args => {
-  return <Navbar {...args} />;
+  return (
+    <NavbarProvider>
+      <Navbar {...args} />
+    </NavbarProvider>
+  );
 };
 
 export const Default = Template.bind({});

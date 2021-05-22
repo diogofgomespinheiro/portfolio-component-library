@@ -3,6 +3,7 @@ import * as React from 'react';
 import { callAll } from '../../../utils';
 import { NavbarProps } from './navbar.types';
 
+import { useNavbar } from './navbar.context';
 import * as S from './navbar.styles';
 
 const Navbar = ({
@@ -10,17 +11,18 @@ const Navbar = ({
   icon,
   menuListItems,
   extraMenuItem,
-  extraItems,
-  selectedMenuListItem = 0
+  extraItems
 }: NavbarProps): React.ReactElement => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState(selectedMenuListItem);
+  const {
+    isMobileMenuOpenState: { isMobileMenuOpen, setIsMobileMenuOpen },
+    selectedItemState: { selectedItem, setSelectedItem }
+  } = useNavbar();
 
   const handleHamburguerClick = (evt: React.MouseEvent<HTMLDivElement>) => {
     evt.preventDefault();
 
     if (window.innerWidth < 768) {
-      setIsOpen(prevState => {
+      setIsMobileMenuOpen(prevState => {
         document.body.classList.toggle('hide-scroll', !prevState);
         return !prevState;
       });
@@ -33,13 +35,13 @@ const Navbar = ({
         {Boolean(icon) && <S.NavIcon>{React.Children.only(icon)}</S.NavIcon>}
         <S.Menu>
           <div>
-            <S.MenuList isOpen={isOpen}>
+            <S.MenuList isOpen={isMobileMenuOpen}>
               {React.Children.map(menuListItems, (child, index) => (
                 <S.MenuListItem
                   isSelected={selectedItem === index}
                   key={`menu-list-item-${index}`}
                 >
-                  {child.type === 'string' || !child.type ? (
+                  {!child.type ? (
                     <span
                       onClick={callAll(
                         () => setSelectedItem(index),
@@ -69,7 +71,7 @@ const Navbar = ({
           {Boolean(extraItems) && extraItems}
         </S.Menu>
         <S.Hamburguer
-          controlledIsOpen={isOpen}
+          controlledIsOpen={isMobileMenuOpen}
           onClick={handleHamburguerClick}
         />
       </S.Wrapper>
