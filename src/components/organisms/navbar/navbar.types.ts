@@ -6,6 +6,7 @@ export type NavbarProps = {
   menuListItems: React.ReactElement[] | React.ReactElement;
   extraMenuItem?: React.ReactElement;
   extraItems?: React.ReactElement[] | React.ReactElement;
+  bindSelectItem?: boolean;
 };
 
 export type NavbarProviderProps = {

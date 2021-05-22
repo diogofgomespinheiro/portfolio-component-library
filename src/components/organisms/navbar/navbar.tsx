@@ -11,7 +11,8 @@ const Navbar = ({
   icon,
   menuListItems,
   extraMenuItem,
-  extraItems
+  extraItems,
+  bindSelectItem = true
 }: NavbarProps): React.ReactElement => {
   const {
     isMobileMenuOpenState: { isMobileMenuOpen, setIsMobileMenuOpen },
@@ -53,7 +54,9 @@ const Navbar = ({
                   ) : (
                     React.cloneElement(child, {
                       onClick: callAll(
-                        () => setSelectedItem(index),
+                        bindSelectItem
+                          ? () => setSelectedItem(index)
+                          : () => void 0,
                         handleHamburguerClick,
                         child.props?.onClick
                       )
