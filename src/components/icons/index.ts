@@ -4,3 +4,4 @@ export * from './logo-icon';
 export * from './hamburguer';
 export * from './sun-icon';
 export * from './moon-icon';
+export * from './github-icon';
