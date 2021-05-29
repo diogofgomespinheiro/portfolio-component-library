@@ -10,7 +10,7 @@ const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M26.4951 26V25.9992H26.5001V18.6642C26.5001 15.0758 25.7276 12.3116 21.5326 12.3116C19.5159 12.3116 18.1626 13.4183 17.6101 14.4675H17.5517V12.6466H13.5742V25.9992H17.7159V19.3875C17.7159 17.6467 18.0459 15.9633 20.2017 15.9633C22.3259 15.9633 22.3576 17.95 22.3576 19.4992V26H26.4951Z"
           fill={props.fill}

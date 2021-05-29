@@ -10,7 +10,7 @@ const EmailIcon = (props: React.SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M25.25 9.125H7.75C7.06 9.125 6.5 9.685 6.5 10.375V11.0862L16.5 15.3212L26.5 11.085V10.375C26.5 9.685 25.94 9.125 25.25 9.125Z"
           fill={props.fill}
