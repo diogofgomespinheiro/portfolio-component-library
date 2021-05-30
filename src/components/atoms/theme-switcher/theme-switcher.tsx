@@ -25,7 +25,7 @@ const ThemeSwitcher = ({
 
   return (
     <S.Container onClick={callAll(onClick, handleThemeSwitch)}>
-      {isDark ? <MoonIcon /> : <SunIcon />}
+      {isDark ? <SunIcon /> : <MoonIcon />}
     </S.Container>
   );
 };
