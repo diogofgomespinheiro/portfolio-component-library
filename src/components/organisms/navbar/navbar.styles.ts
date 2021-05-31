@@ -32,9 +32,26 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px;
   width: 100%;
   max-width: 1440px;
+
+  & > * {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @media screen and (${deviceQueries.tablet.min}) {
+    & > * {
+      &:not(:last-child) {
+        margin-right: 0px;
+      }
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
 `;
 
 export const NavIcon = styled.div``;
@@ -43,8 +60,13 @@ export const Menu = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 60px;
   flex: 1;
+
+  & > * {
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
 `;
 
 type MenuListItemProps = { isSelected?: boolean };
@@ -87,7 +109,6 @@ export const MenuList = styled.ul<MenuListProps>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
   background: ${getPropFromColors('navbar', 'mobileBackground')};
   backdrop-filter: ${getPropFromColors('navbar', 'backdropFilter')};
   opacity: 0;
@@ -97,6 +118,12 @@ export const MenuList = styled.ul<MenuListProps>`
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  & > * {
+    &:not(:last-child) {
+      margin: 0 0 40px 0;
+    }
   }
 
   ${({ isOpen }) =>
@@ -111,7 +138,6 @@ export const MenuList = styled.ul<MenuListProps>`
 
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
 
     padding: 0;
     margin: 0;
@@ -119,6 +145,12 @@ export const MenuList = styled.ul<MenuListProps>`
 
     ${MenuListItemExtra} {
       margin-left: 30px;
+    }
+
+    & > * {
+      &:not(:last-child) {
+        margin: 0 20px 0 0;
+      }
     }
   }
 `;

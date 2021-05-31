@@ -18,11 +18,6 @@ export const TabsContainer = styled.div`
 
 export const TabsListContainer = styled.div`
   display: flex;
-  ${({ theme }) => ({
-    gap: `${
-      getPropFromDimensions('tabs', 'mobile', 'tabsList')({ theme }).gap
-    }px`
-  })};
   overflow-x: scroll;
 
   ${h5Mixin}
@@ -37,12 +32,26 @@ export const TabsListContainer = styled.div`
     display: none;
   }
 
+  & > * {
+    &:not(:last-child) {
+      ${({ theme }) => ({
+        marginRight: `${
+          getPropFromDimensions('tabs', 'mobile', 'tabsList')({ theme }).gap
+        }px`
+      })};
+    }
+  }
+
   @media screen and (${deviceQueries.mobileL.min}) {
-    ${({ theme }) => ({
-      gap: `${
-        getPropFromDimensions('tabs', 'desktop', 'tabsList')({ theme }).gap
-      }px`
-    })};
+    & > * {
+      &:not(:last-child) {
+        ${({ theme }) => ({
+          marginRight: `${
+            getPropFromDimensions('tabs', 'desktop', 'tabsList')({ theme }).gap
+          }px`
+        })};
+      }
+    }
   }
 `;
 
@@ -62,33 +71,13 @@ export const TabsPanelsContainer = styled.div`
     const height = theme.componentLib.dimensions.tabs.height;
     return Boolean(height) ? `${height}px` : 'auto';
   }};
-  overflow-y: scroll;
+  overflow-y: auto;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
-
-  /* ::-webkit-scrollbar {
-    width: 3px;
-    background-color: #f5f5f5;
-  }
-
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #cecece;
-  }
-  */
 `;
 
 export const TabsPanelContainer = styled.div`
@@ -100,10 +89,15 @@ export const TabsPanelContainer = styled.div`
 export const SimpleTabsPanelItem = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
 
   &:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  & > * {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -116,9 +110,14 @@ export const SimpleTabsPanelItemSubTitle = styled.span`
 
 export const SimpleTabsPanelItemSubIconsContainer = styled.span`
   display: flex;
-  gap: 20px;
 
   & > img {
     height: 20px;
+  }
+
+  & > * {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 `;

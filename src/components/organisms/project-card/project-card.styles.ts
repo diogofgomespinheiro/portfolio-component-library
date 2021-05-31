@@ -12,7 +12,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
 
   padding: 40px 20px;
   width: 100%;
@@ -36,10 +35,12 @@ export const Container = styled.div`
 
 export const ImageWrapper = styled.div`
   width: 100%;
+  margin: 0 0 20px 0;
 
   @media screen and (${deviceQueries.tablet.min}) {
     min-width: 250px;
     width: 50%;
+    margin: 0 20px 0 0;
   }
 `;
 
@@ -48,9 +49,11 @@ export const ContentContainer = styled.div`
   flex: 1;
   width: 100%;
   max-width: 360px;
+  margin: 20px 0 0 0;
 
   @media screen and (${deviceQueries.tablet.min}) {
     width: 50%;
+    margin: 0 0 0 20px;
   }
 `;
 
@@ -76,13 +79,16 @@ const flexWrapCenter = css`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
 `;
 
 export const ListContainer = styled.div`
   ${flexWrapCenter};
 
   margin-top: 40px;
+
+  & > * {
+    margin: 5px;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -96,6 +102,7 @@ export const ButtonsContainer = styled.div`
 
   & > * {
     cursor: pointer;
+    margin: 5px;
   }
 
   @media screen and (${deviceQueries.tablet.min}) {
