@@ -18,7 +18,7 @@ export const TabsContainer = styled.div`
 
 export const TabsListContainer = styled.div`
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
 
   ${h5Mixin}
   ${({ theme }) => ({
@@ -26,10 +26,23 @@ export const TabsListContainer = styled.div`
       .margin
   })};
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
+  ::-webkit-scrollbar {
+    height: 3px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #cecece;
   }
 
   & > * {
